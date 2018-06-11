@@ -32,11 +32,11 @@ configuration: Release
 
 # scripts to run before build
 before_build:
-  - nuget restore 
+  - nuget restore src/ReKreator.sln
 
 build:
   parallel: true                  # enable MSBuild parallel builds
-  project: /src/ReKreator.sln     # path to Visual Studio solution or project
+  project: src/ReKreator.sln     # path to Visual Studio solution or project
   
   # MSBuild verbosity level
   verbosity: minimal
