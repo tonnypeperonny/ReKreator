@@ -1,0 +1,22 @@
+﻿
+Microsoft Visual Studio Solution File, Format Version 12.00
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "ReKreator.Utils", "ReKreator.Utils\ReKreator.Utils.csproj", "{53BC9F95-DA0F-4E3E-BA5D-853A16890FDC}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "ReKreator.Utils.Tests", "ReKreator.Utils.Tests\ReKreator.Utils.Tests.csproj", "{5F133F38-96C6-4760-B961-F8726D5F9D4B}"
+EndProject
+Global
+	GlobalSection(SolutionConfigurationPlatforms) = preSolution
+		Debug|Any CPU = Debug|Any CPU
+		Release|Any CPU = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(ProjectConfigurationPlatforms) = postSolution
+		{53BC9F95-DA0F-4E3E-BA5D-853A16890FDC}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{53BC9F95-DA0F-4E3E-BA5D-853A16890FDC}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{53BC9F95-DA0F-4E3E-BA5D-853A16890FDC}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{53BC9F95-DA0F-4E3E-BA5D-853A16890FDC}.Release|Any CPU.Build.0 = Release|Any CPU
+		{5F133F38-96C6-4760-B961-F8726D5F9D4B}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{5F133F38-96C6-4760-B961-F8726D5F9D4B}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{5F133F38-96C6-4760-B961-F8726D5F9D4B}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{5F133F38-96C6-4760-B961-F8726D5F9D4B}.Release|Any CPU.Build.0 = Release|Any CPU
+	EndGlobalSection
+EndGlobal
