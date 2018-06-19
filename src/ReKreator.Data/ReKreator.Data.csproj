@@ -63,7 +63,16 @@
   </ItemGroup>
   <ItemGroup>
     <Compile Include="Context\DbStartupInitializer.cs" />
+    <Compile Include="Context\FluentAPI\EventConfiguration.cs" />
+    <Compile Include="Context\FluentAPI\LocationConfiguration.cs" />
     <Compile Include="Context\ReKreatorContext.cs" />
+    <Compile Include="Core\Repository\IRepository.cs" />
+    <Compile Include="Core\Repository\Repository.cs" />
+    <Compile Include="Core\UnitOfWork\IUnitOfWork.cs" />
+    <Compile Include="Core\UnitOfWork\UnitOfWork.cs" />
+    <Compile Include="Models\Event.cs" />
+    <Compile Include="Models\Location.cs" />
+    <Compile Include="Models\Schedule.cs" />
     <Compile Include="Models\User.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
   </ItemGroup>
@@ -71,5 +80,6 @@
     <None Include="app.config" />
     <None Include="packages.config" />
   </ItemGroup>
+  <ItemGroup />
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
 </Project>
