@@ -38,6 +38,9 @@
     <WarningLevel>4</WarningLevel>
   </PropertyGroup>
   <ItemGroup>
+    <Reference Include="AngleSharp, Version=0.9.9.0, Culture=neutral, PublicKeyToken=e83494dcdc6d31ea, processorArchitecture=MSIL">
+      <HintPath>..\..\packages\AngleSharp.0.9.9.2\lib\net45\AngleSharp.dll</HintPath>
+    </Reference>
     <Reference Include="Castle.Core, Version=4.0.0.0, Culture=neutral, PublicKeyToken=407dd0808d44fbdc, processorArchitecture=MSIL">
       <HintPath>..\..\packages\Castle.Core.4.3.0\lib\net45\Castle.Core.dll</HintPath>
     </Reference>
@@ -67,11 +70,33 @@
     <Reference Include="System.Xml.Linq" />
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="ContentProviders\ConcertProviderTests.cs" />
+    <Compile Include="Core\ContentProviderFactoryTests.cs" />
+    <Compile Include="Core\EventsProviderTests.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
   </ItemGroup>
   <ItemGroup>
     <None Include="app.config" />
     <None Include="packages.config" />
+  </ItemGroup>
+  <ItemGroup>
+    <EmbeddedResource Include="TestPages\ConcertCategory\Page1.html" />
+  </ItemGroup>
+  <ItemGroup>
+    <EmbeddedResource Include="TestPages\ConcertCategory\PageWithoutEvents.html" />
+    <EmbeddedResource Include="TestPages\ConcertCategory\PageWithEvents.html" />
+  </ItemGroup>
+  <ItemGroup>
+    <EmbeddedResource Include="TestPages\ConcertCategory\Page2.html" />
+  </ItemGroup>
+  <ItemGroup>
+    <EmbeddedResource Include="TestPages\ConcertCategory\Page3.html" />
+  </ItemGroup>
+  <ItemGroup>
+    <ProjectReference Include="..\..\src\ReKreator.HtmlParser\ReKreator.HtmlParser.csproj">
+      <Project>{c255fb35-b5a2-4a14-a71a-57fac0ef8267}</Project>
+      <Name>ReKreator.HtmlParser</Name>
+    </ProjectReference>
   </ItemGroup>
   <Import Project="$(VSToolsPath)\TeamTest\Microsoft.TestTools.targets" Condition="Exists('$(VSToolsPath)\TeamTest\Microsoft.TestTools.targets')" />
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />

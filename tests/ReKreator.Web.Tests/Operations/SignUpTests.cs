@@ -3,7 +3,6 @@ using FluentAssertions;
 using Microsoft.AspNet.Identity;
 using Moq;
 using NUnit.Framework;
-using ReKreator.Common.Operations;
 using ReKreator.Data.Models;
 using ReKreator.Web.Authorization.SignUp;
 using ReKreator.Web.Models;
