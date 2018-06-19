@@ -7,7 +7,12 @@ using Microsoft.AspNet.Identity;
 using Microsoft.AspNet.Identity.EntityFramework;
 using Microsoft.Owin.Security;
 using Microsoft.Owin.Security.Cookies;
+using ReKreator.Business.Core.DbUpdate;
+using ReKreator.Business.Core.EventProviderFolder;
+using ReKreator.Business.Core.ImageService;
 using ReKreator.Data.Context;
+using ReKreator.Data.Core.Repository;
+using ReKreator.Data.Core.UnitOfWork;
 using ReKreator.Data.Models;
 using ReKreator.HtmlParser.Config;
 using ReKreator.HtmlParser.Config.Models;
@@ -28,16 +33,26 @@ namespace ReKreator.Web.Ioc
         public static IContainer ConfigureContainer()
         {
             var builder = new ContainerBuilder();
+            // Identity dependencies
             builder.RegisterType<SignUpOperation>().As<ISignUpOperation>().InstancePerRequest();
             builder.RegisterType<SignInOperation>().As<ISignInOperation>().InstancePerRequest();
             builder.RegisterType<SignOutOperation>().As<ISignOutOperation>().InstancePerRequest();
-            builder.RegisterType<ReKreatorContext>().AsSelf().SingleInstance();
             builder.Register(c => new UserStore<User>(c.Resolve<ReKreatorContext>())).AsImplementedInterfaces().InstancePerRequest();
             builder.RegisterType<UserManager<User>>().AsSelf().InstancePerRequest();
             builder.Register(c => HttpContext.Current.GetOwinContext().Authentication).As<IAuthenticationManager>();
             builder.RegisterControllers(typeof(MvcApplication).Assembly);
             builder.RegisterType<SignUpUserValidator>().As<IIdentityValidator<User>>().InstancePerRequest();
             builder.RegisterType<CookieAuthenticationOptions>().AsSelf().SingleInstance();
+
+            // Bussiness Layer Dependencies
+            builder.RegisterType<DbUpdateService>().As<IDbUpdateService>().InstancePerRequest();
+            builder.RegisterType<EventProvider>().As<IEventProvider>();
+            builder.RegisterType<PosterService>().As<IPosterService>();
+
+            // DAL dependencies
+            builder.RegisterType<ReKreatorContext>().AsSelf().InstancePerRequest();
+            builder.RegisterType<UnitOfWork>().As<IUnitOfWork>().InstancePerRequest();
+            builder.RegisterGeneric(typeof(Repository<>)).As(typeof(IRepository<>));
 
             // Parser dependencies
             builder.Register(c => (ParserConfig)ConfigurationManager.GetSection("parserConfig")).As<ParserConfig>();
