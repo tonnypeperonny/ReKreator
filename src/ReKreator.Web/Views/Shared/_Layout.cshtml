@@ -10,38 +10,38 @@
     @Scripts.Render("~/bundles/modern")
 </head>
 <body>
-<nav class="navbar navbar-expand-lg navbar-dark bg-dark">
+    <nav class="navbar navbar-expand-lg navbar-dark bg-dark">
+        <div class="container">
+            <a href="@Url.Action("Index", "Home")">
+                <img src="@Url.Content("/Images/SmallLogo.png")" , alt="Site Logo" />
+            </a>
+
+            <ul class="nav navbar-nav">
+                @if (!User.Identity.IsAuthenticated)
+                {
+                    <li>@Html.ActionLink("Sign In", "SignIn", "Account")</li>
+                }
+
+                @if (User.Identity.IsAuthenticated)
+                {
+                    <li class="col-md-auto font-italic">
+                        What's up, @User.Identity.Name?
+                    </li>
+                    <li>@Html.ActionLink("Sign Out", "SignOut", "Account")</li>
+                }
+            </ul>
+        </div>
+    </nav>
+
     <div class="container">
-        <a href="@Url.Action("Index", "Home")">
-            <img src="@Url.Content("/Images/SmallLogo.png")" , alt="Site Logo" />
-        </a>
-        
-        <ul class="nav navbar-nav">
-            @if (!User.Identity.IsAuthenticated)
-            {
-                <li>@Html.ActionLink("Sign In", "SignIn", "Account")</li>
-            }
-
-            @if (User.Identity.IsAuthenticated)
-            {
-                <li class="col-md-auto font-italic">
-                    What's up, @User.Identity.Name?
-                </li>
-                <li>@Html.ActionLink("Sign Out", "SignOut", "Account")</li>
-            }
-        </ul>
+        @RenderBody()
     </div>
-</nav>
 
-<div class="container">
-    @RenderBody()
-</div>
+    <footer class="container fixed-bottom">
+        <hr />
+        <p>2018 &copy; Godel Mastery 3.0</p>
+    </footer>
 
-<footer class="container fixed-bottom">
-    <hr />
-    <p>2018 &copy; Godel Mastery 3.0</p>
-</footer>
-
-@Scripts.Render("~/bundles/js")
+    @Scripts.Render("~/bundles/js")
 </body>
 </html>
