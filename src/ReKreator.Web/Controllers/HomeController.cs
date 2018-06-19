@@ -5,6 +5,9 @@ namespace ReKreator.Web.Controllers
     public class HomeController : Controller
     {
         [HttpGet]
-        public ActionResult Index() => View();
+        public ViewResult Index()
+        {
+            return View();
+        }
     }
 }

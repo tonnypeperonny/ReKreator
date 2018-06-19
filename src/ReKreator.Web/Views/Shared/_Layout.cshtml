@@ -12,8 +12,8 @@
 <body>
     <nav class="navbar navbar-expand-lg navbar-dark bg-dark">
         <div class="container">
-            <a href="@Url.Action("Index", "Home")">
-                <img src="@Url.Content("/Images/SmallLogo.png")" , alt="Site Logo" />
+            <a href="@Url.Action("DisplayAllMovies", "Content")">
+                <img src="@Url.Content("/Images/SmallLogo.png")" onclick="clearCookie();" , alt="Site Logo" />
             </a>
 
             <ul class="nav navbar-nav">
@@ -28,7 +28,7 @@
                         What's up, @User.Identity.Name?
                     </li>
                     <li>@Html.ActionLink("Sign Out", "SignOut", "Account")</li>
-                }
+                   }
             </ul>
         </div>
     </nav>

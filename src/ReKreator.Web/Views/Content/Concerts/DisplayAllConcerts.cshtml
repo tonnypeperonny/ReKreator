@@ -1,0 +1,42 @@
+﻿@using PagedList
+@using PagedList.Mvc
+@using ReKreator.Web.Helpers
+@model IPagedList<ReKreator.Web.Models.EventModel>
+
+@{
+    ViewBag.Title = "DisplayEvents";
+    Layout = "~/Views/Shared/_OverviewPageLayout.cshtml";
+}
+
+@if (User.Identity.IsAuthenticated)
+{
+    @Html.Action("DisplayFeaturedConcerts")
+}
+
+<h2 style="color:black">New concerts:</h2>
+<div class="row">
+    @foreach (var item in Model)
+    {
+        <div class="col-lg-3 form-group">
+            <div class="justify-content-center text-center">
+                <div class="col-md-auto">
+                    @Html.Image(item.EventPoster.Value);
+                    <div class="customtext">
+                        @{var value = item.EventName.Length > 23 ? item.EventName.Substring(0, 20) + "..." : item.EventName;}
+                        @Html.DisplayFor(modelItem => value)
+                    </div>
+                </div>
+            </div>
+        </div>
+    }
+        <div class="position-relative col-lg-12" style="margin-bottom: -7%;margin-left: 45%">
+            @if (Model.PageCount != 1)
+            {
+                @Html.PagedListPager(Model, page => Url.Action("DisplayAllConcerts", "Content", new { page }),
+                    new PagedListRenderOptions{ MaximumPageNumbersToDisplay = 5, DisplayLinkToPreviousPage = PagedListDisplayMode.Never, DisplayLinkToNextPage = PagedListDisplayMode.Never, DisplayEllipsesWhenNotShowingAllPageNumbers = false })
+            }
+        </div>
+</div>
+
+
+

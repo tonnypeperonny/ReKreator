@@ -73,6 +73,20 @@
     <None Include="app.config" />
     <None Include="packages.config" />
   </ItemGroup>
+  <ItemGroup>
+    <ProjectReference Include="..\..\src\ReKreator.Business\ReKreator.Business.csproj">
+      <Project>{3EFFB1AA-7A2E-4765-A18B-B130E6083FEB}</Project>
+      <Name>ReKreator.Business</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\..\src\ReKreator.Data\ReKreator.Data.csproj">
+      <Project>{606AF6E3-247C-455B-A281-5A3D4B2C5BA2}</Project>
+      <Name>ReKreator.Data</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\..\src\ReKreator.HtmlParser\ReKreator.HtmlParser.csproj">
+      <Project>{C255FB35-B5A2-4A14-A71A-57FAC0EF8267}</Project>
+      <Name>ReKreator.HtmlParser</Name>
+    </ProjectReference>
+  </ItemGroup>
   <Import Project="$(VSToolsPath)\TeamTest\Microsoft.TestTools.targets" Condition="Exists('$(VSToolsPath)\TeamTest\Microsoft.TestTools.targets')" />
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
   <Target Name="EnsureNuGetPackageBuildImports" BeforeTargets="PrepareForBuild">

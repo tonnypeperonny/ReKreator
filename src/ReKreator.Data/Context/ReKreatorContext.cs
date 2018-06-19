@@ -13,7 +13,7 @@ namespace ReKreator.Data.Context
         public ReKreatorContext()
             : base("ReKreatorDb")
         {
-
         }
+
     }
 }

@@ -125,6 +125,10 @@
     <None Include="packages.config" />
   </ItemGroup>
   <ItemGroup>
+    <ProjectReference Include="..\..\src\ReKreator.Business\ReKreator.Business.csproj">
+      <Project>{3EFFB1AA-7A2E-4765-A18B-B130E6083FEB}</Project>
+      <Name>ReKreator.Business</Name>
+    </ProjectReference>
     <ProjectReference Include="..\..\src\ReKreator.Common\ReKreator.Common.csproj">
       <Project>{E5DD7CDB-3A75-4FD4-8589-FABB779315BD}</Project>
       <Name>ReKreator.Common</Name>

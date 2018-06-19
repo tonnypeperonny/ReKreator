@@ -1,0 +1,21 @@
+﻿@using ReKreator.Web.Helpers
+@model IEnumerable<ReKreator.Web.Models.EventModel>
+
+<h2 style="color:black">Your upcoming spectales:</h2>
+<div class="row">
+    @foreach (var item in Model)
+    {
+        <div class="form-group col-lg-3">
+            <div class="justify-content-center text-center">
+                <div class="col-md-auto">
+                    @Html.Image(item.EventPoster.Value);
+                    <div class="customtext">
+                        @{var value = item.EventName.Length > 23 ? item.EventName.Substring(0, 20) + "..." : item.EventName;}
+                        @Html.DisplayFor(modelItem => value)
+                    </div>
+                </div>
+            </div>
+        </div>
+    }
+</div>
+

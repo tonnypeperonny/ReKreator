@@ -20,6 +20,7 @@ using ReKreator.HtmlParser.Core.Handlers;
 using ReKreator.HtmlParser.Core.HtmlProvider;
 using ReKreator.Web.Authorization.SignUp;
 using ReKreator.Web.Authorization.Validator;
+using ReKreator.Web.Stubs;
 
 namespace ReKreator.Web.Ioc
 {
@@ -28,16 +29,22 @@ namespace ReKreator.Web.Ioc
         public static IContainer ConfigureContainer()
         {
             var builder = new ContainerBuilder();
+            // Web dependencies
             builder.RegisterType<SignUpOperation>().As<ISignUpOperation>().InstancePerRequest();
             builder.RegisterType<SignInOperation>().As<ISignInOperation>().InstancePerRequest();
             builder.RegisterType<SignOutOperation>().As<ISignOutOperation>().InstancePerRequest();
-            builder.RegisterType<ReKreatorContext>().AsSelf().SingleInstance();
             builder.Register(c => new UserStore<User>(c.Resolve<ReKreatorContext>())).AsImplementedInterfaces().InstancePerRequest();
             builder.RegisterType<UserManager<User>>().AsSelf().InstancePerRequest();
             builder.Register(c => HttpContext.Current.GetOwinContext().Authentication).As<IAuthenticationManager>();
             builder.RegisterControllers(typeof(MvcApplication).Assembly);
             builder.RegisterType<SignUpUserValidator>().As<IIdentityValidator<User>>().InstancePerRequest();
             builder.RegisterType<CookieAuthenticationOptions>().AsSelf().SingleInstance();
+            builder.RegisterType<StubsFactory>().As<IStubsFactory>().InstancePerRequest();
+
+            // Bussiness Layer Dependencies
+
+            // DAL dependencies
+            builder.RegisterType<ReKreatorContext>().AsSelf().InstancePerRequest();
 
             // Parser dependencies
             builder.Register(c => (ParserConfig)ConfigurationManager.GetSection("parserConfig")).As<ParserConfig>();

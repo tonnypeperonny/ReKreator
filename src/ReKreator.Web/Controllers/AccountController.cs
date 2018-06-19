@@ -69,7 +69,7 @@ namespace ReKreator.Web.Controllers
                 }
                 else
                 {
-                    return RedirectToAction("Index", "Home");
+                    return RedirectToAction("DisplayAllFeaturedUserEvents", "Content");
                 }
             }
             return View("SignIn", model);

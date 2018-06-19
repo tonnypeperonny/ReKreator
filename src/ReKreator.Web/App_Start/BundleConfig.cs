@@ -13,14 +13,17 @@ namespace ReKreator.Web
 
             bundles.Add(new ScriptBundle("~/bundles/js")
                 .Include(
-                    "~/Scripts/bootstrap.min.js", 
-                    "~/Scripts/jquery-3.3.1.min.js"
+                    "~/Scripts/jquery-3.3.1.min.js",
+                    "~/Scripts/bootstrap.min.js",
+                    "~/Scripts/jquery.cookie-1.4.1.min.js",
+                    "~/Scripts/rekreator.js"
                 ));
 
             bundles.Add(new StyleBundle("~/bundles/css")
                 .Include(
                     "~/Content/bootstrap.min.css", 
-                    "~/Content/rekreator.css"
+                    "~/Content/rekreator.css",
+                    "~/Content/PagedList.css"
                 ));
         }
     }

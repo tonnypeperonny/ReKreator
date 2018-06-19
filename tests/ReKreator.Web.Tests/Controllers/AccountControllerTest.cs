@@ -1,5 +1,6 @@
 ﻿using System.Collections.Generic;
 using System.Linq;
+using System.Threading.Tasks;
 using System.Web.Mvc;
 using FluentAssertions;
 using Microsoft.AspNet.Identity;
@@ -88,13 +89,13 @@ namespace ReKreator.Web.Tests.Controllers
         }
 
         [Test]
-        public void SignIn_verify_SignInOperations_method_was_called()
+        public async Task SignIn_verify_SignInOperations_method_was_called()
         {
             //arrange
             signInMock.Setup(a => a.SignInAsync(It.IsAny<SignInModel>())).ReturnsAsync(new OperationResult { Succedeed = false });
 
             //act
-            underTest.SignIn(new SignInModel());
+            await underTest.SignIn(new SignInModel());
 
             //assert
             signInMock.Verify(a => a.SignInAsync(It.IsAny<SignInModel>()));

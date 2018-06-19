@@ -107,6 +107,12 @@
     <Reference Include="Owin, Version=1.0.0.0, Culture=neutral, PublicKeyToken=f0ebd12fd5e55cc5, processorArchitecture=MSIL">
       <HintPath>..\..\packages\Owin.1.0\lib\net40\Owin.dll</HintPath>
     </Reference>
+    <Reference Include="PagedList, Version=1.17.0.0, Culture=neutral, PublicKeyToken=abbb863e9397c5e1, processorArchitecture=MSIL">
+      <HintPath>..\..\packages\PagedList.1.17.0.0\lib\net40\PagedList.dll</HintPath>
+    </Reference>
+    <Reference Include="PagedList.Mvc, Version=4.5.0.0, Culture=neutral, PublicKeyToken=abbb863e9397c5e1, processorArchitecture=MSIL">
+      <HintPath>..\..\packages\PagedList.Mvc.4.5.0.0\lib\net40\PagedList.Mvc.dll</HintPath>
+    </Reference>
     <Reference Include="System.IO.Compression" />
     <Reference Include="System.Net.Http" />
     <Reference Include="System.Runtime.Serialization" />
@@ -166,6 +172,8 @@
     <Content Include="Content\bootstrap-reboot.min.css" />
     <Content Include="Content\bootstrap.css" />
     <Content Include="Content\bootstrap.min.css" />
+    <Content Include="Content\a.jpg" />
+    <Content Include="Content\PagedList.css" />
     <Content Include="Content\rekreator.css" />
     <Content Include="Global.asax" />
     <Content Include="Images\background.jpg" />
@@ -198,11 +206,14 @@
     <Content Include="Scripts\jquery-3.3.1.min.js" />
     <Content Include="Scripts\jquery-3.3.1.slim.js" />
     <Content Include="Scripts\jquery-3.3.1.slim.min.js" />
+    <Content Include="Scripts\jquery.cookie-1.4.1.min.js" />
+    <Content Include="Scripts\jquery.cookie.js" />
     <Content Include="Scripts\modernizr-2.8.3.js" />
     <Content Include="Scripts\popper-utils.js" />
     <Content Include="Scripts\popper-utils.min.js" />
     <Content Include="Scripts\popper.js" />
     <Content Include="Scripts\popper.min.js" />
+    <Content Include="Scripts\rekreator.js" />
     <Content Include="Scripts\umd\popper-utils.js" />
     <Content Include="Scripts\umd\popper-utils.min.js" />
     <Content Include="Scripts\umd\popper.js" />
@@ -220,14 +231,17 @@
     <Compile Include="Controllers\AccountController.cs" />
     <Compile Include="Authorization\SignUp\ISignUpOperation.cs" />
     <Compile Include="Authorization\SignUp\SignUpOperation.cs" />
+    <Compile Include="Controllers\ContentController.cs" />
     <Compile Include="Controllers\ErrorController.cs" />
     <Compile Include="Controllers\HomeController.cs" />
     <Compile Include="Global.asax.cs">
       <DependentUpon>Global.asax</DependentUpon>
     </Compile>
     <Compile Include="Helpers\DatabaseInitializer.cs" />
+    <Compile Include="Helpers\HtmlExtensions.cs" />
     <Compile Include="Helpers\ModelStateErrorExtension.cs" />
     <Compile Include="Ioc\IocContainer.cs" />
+    <Compile Include="Models\EventModel.cs" />
     <Compile Include="Models\ErrorModel.cs" />
     <Compile Include="Models\SignInModel.cs" />
     <Compile Include="Models\SignUpModel.cs" />
@@ -238,6 +252,8 @@
       <DesignTime>True</DesignTime>
       <DependentUpon>Resources.resx</DependentUpon>
     </Compile>
+    <Compile Include="Stubs\IStubsFactory.cs" />
+    <Compile Include="Stubs\StubsFactory.cs" />
   </ItemGroup>
   <ItemGroup>
     <Content Include="Views\web.config" />
@@ -258,8 +274,17 @@
     <Content Include="Scripts\popper-utils.js.map" />
     <Content Include="Views\Account\SignUp.cshtml" />
     <Content Include="Views\Account\SignIn.cshtml" />
+    <Content Include="Views\Shared\_OverviewPageLayout.cshtml" />
+    <Content Include="Views\Content\Featured\DisplayAllFeaturedUserEvents.cshtml" />
+    <Content Include="Views\Content\Movies\DisplayAllMovies.cshtml" />
+    <Content Include="Views\Content\Concerts\DisplayAllConcerts.cshtml" />
+    <Content Include="Views\Content\Spectacles\DisplaySpectacles.cshtml" />
+    <Content Include="Views\Content\Movies\DisplayFeaturedMovies.cshtml" />
+    <Content Include="Views\Content\Concerts\DisplayFeaturedConcerts.cshtml" />
+    <Content Include="Views\Content\Spectacles\DisplayFeaturedSpectacles.cshtml" />
     <Content Include="Views\Shared\_LayoutError.cshtml" />
     <Content Include="Views\Error\DisplayHttpError.cshtml" />
+    <Content Include="Views\Content\GetFavoritesEvents.cshtml" />
     <None Include="Web.Debug.config">
       <DependentUpon>Web.config</DependentUpon>
     </None>

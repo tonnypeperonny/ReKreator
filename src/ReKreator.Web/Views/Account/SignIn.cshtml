@@ -1,9 +1,10 @@
-﻿@model ReKreator.Web.Models.SignInModel
+﻿@using System.Data.Entity.Core.Common.EntitySql
+@model ReKreator.Web.Models.SignInModel
 
 @{
     ViewBag.Title = "SignIn";
 }
-
+<script src="~/Scripts/rekreator.js"></script>
 
 @using (Html.BeginForm())
 {
@@ -29,15 +30,14 @@
             <div class="form-group">
                 <div class="row">
                     <div class="col-md-auto col-lg-2">
-                        <button type="submit" class="btn btn-info">Sign In</button>
+                        <button type="submit" class="btn btn-info" onclick="clearCookie();">Sign In</button>
                     </div>
                     <div class="col-md-10" align="right">
-                        @Html.ActionLink("Register", "SignUp", null, new { @class = "btn btn-info" })
+                        @Html.ActionLink("Register", "SignUp", null, new { @class = "btn btn-info"})
                     </div>
                 </div>
             </div>
         </div>
     </div>
-
 }
 

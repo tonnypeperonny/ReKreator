@@ -1,0 +1,55 @@
+﻿@using System.Web.Optimization
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="shortcut icon" href="@Url.Content("/Images/SmallLogo.png")" type="image/x-icon">
+    <title>@ViewBag.Title - ReKreator</title>
+    @Styles.Render("~/bundles/css")
+    @Scripts.Render("~/bundles/modern")
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/font-awesome/4.5.0/css/font-awesome.min.css">
+</head>
+<body>
+    <nav class="navbar navbar-expand-lg navbar-dark bg-dark">
+        <div class="container">
+            <a href="@Url.Action("DisplayAllMovies", "Content")">
+                <img src="@Url.Content("/Images/SmallLogo.png")" onclick="clearCookie();", alt="Site Logo" />
+            </a>
+
+            <ul class="nav navbar-nav">
+                @if (!User.Identity.IsAuthenticated)
+                {
+                    <li>@Html.ActionLink("Sign In", "SignIn", "Account")</li>
+                }
+
+                @if (User.Identity.IsAuthenticated)
+                {
+                    <li class="col-md-auto font-italic">
+                        What's up, @User.Identity.Name?
+                    </li>
+                    <li>@Html.ActionLink("Sign Out", "SignOut", "Account")</li>
+                }
+            </ul>
+        </div>
+    </nav>
+    <div class="container">
+        <div class="row">
+            <div class="text-justify col col-lg-2" style="padding-top: 20%; font-size: 1.15rem;">
+                @if (User.Identity.IsAuthenticated)
+                {
+                    <a href="@Url.Action("DisplayAllFeaturedUserEvents", "Content")" class="list-group-item" id="featuredMenu" style="color: black"><i class="fa fa-star-o"></i> <span>Featured</span></a>
+                }
+                <a href="@Url.Action("DisplayAllMovies", "Content")" class="list-group-item" id="moviesMenu" style="color: black"><i class="fa fa-film"></i> <span>Movies</span></a>
+                <a href="@Url.Action("DisplayAllConcerts", "Content")" class="list-group-item" id="concertsMenu" style="color: black"><i class="fa fa-music"></i> <span>Concerts</span></a>
+                <a href="@Url.Action("DisplayAllSpectacle", "Content")" class="list-group-item" id="theatricalsMenu" style="color: black"><i class="fa fa-institution"></i> <span>Spectacles</span></a>
+            </div>
+            <div class="container col-md-10 jumbotron" style="background-color: white;">
+                @RenderBody()
+            </div>
+        </div>
+    </div>
+   
+    @Scripts.Render("~/bundles/js")
+</body>
+</html>
