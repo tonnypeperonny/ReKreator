@@ -1,0 +1,32 @@
+﻿@using System.Web.Optimization
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="shortcut icon" href="@Url.Content("/Images/SmallLogo.png")" type="image/x-icon">
+    <title>@ViewBag.Title - ReKreator</title>
+    @Styles.Render("~/bundles/css")
+    @Scripts.Render("~/bundles/modern")
+</head>
+<body>
+    <nav class="navbar navbar-expand-lg navbar-dark bg-dark">
+        <div class="container">
+            <a href="@Url.Action("Index", "Home")">
+                <img src="@Url.Content("/Images/SmallLogo.png")" , alt="Site Logo" />
+            </a>
+        </div>
+    </nav>
+
+    <div class="container">
+        @RenderBody()
+    </div>
+
+    <footer class="container fixed-bottom">
+        <hr />
+        <p>2018 &copy; Godel Mastery 3.0</p>
+    </footer>
+
+    @Scripts.Render("~/bundles/js")
+</body>
+</html>

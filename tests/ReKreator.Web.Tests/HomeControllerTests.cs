@@ -1,19 +1,20 @@
-﻿using NUnit.Framework;
+﻿using FluentAssertions;
+using NUnit.Framework;
 using ReKreator.Web.Controllers;
 
 namespace ReKreator.Web.Tests
 {
-    internal class HomeControllerTests
+    [TestFixture]
+    public class HomeControllerTests
     {
         [Test]
-        public void HomeControllerTest_WhenReturnView()
+        public void When_Index_Action_Invoked_Then_Should_Return_View()
         {
-            // Arrange
             var controller = new HomeController();
-            // Act
+
             var result = controller.Index();
-            // Assert
-            Assert.AreEqual("HomeController - Test", result);
+
+            result.Should().NotBeNull();
         }
     }
 }

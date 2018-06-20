@@ -4,9 +4,7 @@ namespace ReKreator.Web.Controllers
 {
     public class HomeController : Controller
     {
-        public string Index()
-        {
-            return "HomeController - Test";
-        }
+        [HttpGet]
+        public ActionResult Index() => View("Index");
     }
 }

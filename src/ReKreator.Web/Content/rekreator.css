@@ -1,0 +1,13 @@
+﻿html, body {
+    height: 100%;
+    color: #868F9B;
+}
+
+body {
+    background-image: linear-gradient(rgba(47, 23, 15, .65), rgba(47, 23, 15, .65)),
+                      Url(../Images/background.jpg);
+    background-repeat: no-repeat;
+    background-attachment: fixed;
+    background-position: center;
+    background-size: cover;
+}
