@@ -15,6 +15,9 @@
             <a href="@Url.Action("Index", "Home")">
                 <img src="@Url.Content("/Images/SmallLogo.png")" , alt="Site Logo" />
             </a>
+            <ul class="nav navbar-nav">
+                <li>@Html.ActionLink("SignUp", "SignUp", "Account")</li>
+            </ul>
         </div>
     </nav>
 

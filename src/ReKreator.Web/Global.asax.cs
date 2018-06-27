@@ -1,6 +1,7 @@
 ﻿using System.Web.Mvc;
 using System.Web.Optimization;
 using System.Web.Routing;
+using ReKreator.Web.Helpers;
 
 namespace ReKreator.Web
 {
@@ -11,6 +12,7 @@ namespace ReKreator.Web
             BundleConfig.RegisterBundles(BundleTable.Bundles);
             AreaRegistration.RegisterAllAreas();
             RouteConfig.RegisterRoutes(RouteTable.Routes);
+            DatabaseInitializer.Initialize();
         }
     }
 }
