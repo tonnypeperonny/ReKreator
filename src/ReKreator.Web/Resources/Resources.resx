@@ -123,6 +123,9 @@
   <data name="EmailValidator" xml:space="preserve">
     <value>"Incorrect email, should be like Yourmail@some.mail!"</value>
   </data>
+  <data name="SignInError" xml:space="preserve">
+    <value>Wrong login or password!</value>
+  </data>
   <data name="UserNameError" xml:space="preserve">
     <value>User with the same username is already exist!</value>
   </data>

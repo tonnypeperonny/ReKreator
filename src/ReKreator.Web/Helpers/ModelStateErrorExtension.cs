@@ -12,5 +12,10 @@ namespace ReKreator.Web.Helpers
                 model.AddModelError(string.Empty, error);
             }
         }
+
+        public static void AddError(this ModelStateDictionary model, string errorMesseage)
+        {
+            model.AddModelError(string.Empty, errorMesseage);
+        }
     }
 }
