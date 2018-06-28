@@ -1,4 +1,6 @@
-﻿using Microsoft.AspNet.Identity;
+﻿using System;
+using Hangfire;
+using Microsoft.AspNet.Identity;
 using Microsoft.Owin;
 using Microsoft.Owin.Security.Cookies;
 using Owin;
@@ -18,6 +20,11 @@ namespace ReKreator.Web
                 AuthenticationType = DefaultAuthenticationTypes.ApplicationCookie,
                 LoginPath = new PathString("/Home/Index"),
             });
+
+            GlobalConfiguration.Configuration.UseSqlServerStorage("ReKreatorSheduler");
+            GlobalConfiguration.Configuration.UseActivator(new ContainerJobActivator(container));
+            app.UseHangfireDashboard();
+            app.UseHangfireServer();
         }
     }
 }
