@@ -2,6 +2,7 @@
 using System.Linq;
 using Microsoft.AspNet.Identity;
 using NLog;
+using ReKreator.Common.Operations;
 using ReKreator.Data.Models;
 using ReKreator.Web.Models;
 
@@ -19,12 +20,12 @@ namespace ReKreator.Web.Authorization.SignUp
 
             if (signUpUserValidator == null)
                 throw new ArgumentNullException(nameof(signUpUserValidator));
-            
+
             this.userManager = userManager;
             this.userManager.UserValidator = signUpUserValidator;
         }
 
-        public IdentityResult SignUp(SignUpModel model)
+        public OperationResult<IdentityResult> SignUp(SignUpModel model)
         {
             if (model == null)
                 throw new ArgumentNullException(nameof(model));
@@ -41,7 +42,7 @@ namespace ReKreator.Web.Authorization.SignUp
                 if (identityResult.Errors.Any())
                 {
                     Logger.Warn($"Creation of {user.Email} was failed.");
-                    return IdentityResult.Failed(identityResult.Errors.ToArray());
+                    return OperationResult.Fail(IdentityResult.Failed(identityResult.Errors.ToArray()), "Error occured during user creation.");
                 }
                 Logger.Info($"Creation of {user.Email} was succeed.");
             }
@@ -49,7 +50,7 @@ namespace ReKreator.Web.Authorization.SignUp
             {
                 Logger.Error(e, "An error occured during user creation.");
             }
-            return IdentityResult.Success;
+            return OperationResult.Succeed(IdentityResult.Success);
         }
     }
 }

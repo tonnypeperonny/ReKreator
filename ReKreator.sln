@@ -28,6 +28,8 @@ Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "ReKreator.Scheduler.Tests",
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "ReKreator.Web", "src\ReKreator.Web\ReKreator.Web.csproj", "{FEA2E835-F457-4412-8408-A38C7549DE37}"
 EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "ReKreator.Common", "src\ReKreator.Common\ReKreator.Common.csproj", "{E5DD7CDB-3A75-4FD4-8589-FABB779315BD}"
+EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
 		Debug|Any CPU = Debug|Any CPU
@@ -78,6 +80,10 @@ Global
 		{FEA2E835-F457-4412-8408-A38C7549DE37}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{FEA2E835-F457-4412-8408-A38C7549DE37}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{FEA2E835-F457-4412-8408-A38C7549DE37}.Release|Any CPU.Build.0 = Release|Any CPU
+		{E5DD7CDB-3A75-4FD4-8589-FABB779315BD}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{E5DD7CDB-3A75-4FD4-8589-FABB779315BD}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{E5DD7CDB-3A75-4FD4-8589-FABB779315BD}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{E5DD7CDB-3A75-4FD4-8589-FABB779315BD}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE
@@ -91,6 +97,7 @@ Global
 		{4CA43A47-E394-4B6C-B5A3-B64EF0D2CB6F} = {B1FCC551-009F-4194-94CE-827F4D60C40C}
 		{D9E38F44-4BAD-450E-AFFE-EB191D6FF854} = {B1FCC551-009F-4194-94CE-827F4D60C40C}
 		{630EA27C-1D6E-4D52-93AA-83618CE390B6} = {B1FCC551-009F-4194-94CE-827F4D60C40C}
+		{E5DD7CDB-3A75-4FD4-8589-FABB779315BD} = {44BFBA3B-2B9D-4E8B-A9CA-5637B3CCC59C}
 	EndGlobalSection
 	GlobalSection(ExtensibilityGlobals) = postSolution
 		SolutionGuid = {7B3D5EB0-E746-4131-98CB-3C06A6DF2F28}
