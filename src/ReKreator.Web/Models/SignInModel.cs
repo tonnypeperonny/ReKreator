@@ -8,7 +8,6 @@ namespace ReKreator.Web.Models
         [MaxLength(250)]
         public string Login { get; set; }
         [Required]
-        [DataType(DataType.Password)]
         [MinLength(8)]
         public string Password { get; set; }
     }
