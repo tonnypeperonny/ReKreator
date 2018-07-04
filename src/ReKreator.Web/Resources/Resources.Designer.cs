@@ -79,6 +79,15 @@ namespace ReKreator.Web.Resources {
         }
         
         /// <summary>
+        ///   Looks up a localized string similar to Wrong login or password!.
+        /// </summary>
+        public static string SignInError {
+            get {
+                return ResourceManager.GetString("SignInError", resourceCulture);
+            }
+        }
+        
+        /// <summary>
         ///   Looks up a localized string similar to User with the same username is already exist!.
         /// </summary>
         public static string UserNameError {

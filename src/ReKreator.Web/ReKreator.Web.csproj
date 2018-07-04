@@ -215,19 +215,24 @@
     <Compile Include="App_Start\BundleConfig.cs" />
     <Compile Include="App_Start\OwinConfig.cs" />
     <Compile Include="App_Start\RouteConfig.cs" />
+    <Compile Include="Authorization\SignIn\ISignInOperation.cs" />
+    <Compile Include="Authorization\SignOut\ISignOutOperation.cs" />
+    <Compile Include="Authorization\SignIn\SignInOperation.cs" />
+    <Compile Include="Authorization\SignOut\SignOutOperation.cs" />
+    <Compile Include="Controllers\AccountController.cs" />
     <Compile Include="Authorization\SignUp\ISignUpOperation.cs" />
     <Compile Include="Authorization\SignUp\SignUpOperation.cs" />
-    <Compile Include="Controllers\AccountController.cs" />
     <Compile Include="Controllers\HomeController.cs" />
     <Compile Include="Global.asax.cs">
       <DependentUpon>Global.asax</DependentUpon>
     </Compile>
-    <Compile Include="Authorization\Validator\SignUpUserValidator.cs" />
     <Compile Include="Helpers\DatabaseInitializer.cs" />
     <Compile Include="Helpers\ModelStateErrorExtension.cs" />
     <Compile Include="Ioc\ContainerJobActivator.cs" />
     <Compile Include="Ioc\IocContainer.cs" />
+    <Compile Include="Models\SignInModel.cs" />
     <Compile Include="Models\SignUpModel.cs" />
+    <Compile Include="Authorization\Validator\SignUpUserValidator.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
     <Compile Include="Resources\Resources.Designer.cs">
       <AutoGen>True</AutoGen>
@@ -253,6 +258,7 @@
     <Content Include="Scripts\popper-utils.min.js.map" />
     <Content Include="Scripts\popper-utils.js.map" />
     <Content Include="Views\Account\SignUp.cshtml" />
+    <Content Include="Views\Account\SignIn.cshtml" />
     <None Include="Web.Debug.config">
       <DependentUpon>Web.config</DependentUpon>
     </None>
@@ -267,6 +273,10 @@
     <ProjectReference Include="..\ReKreator.Business\ReKreator.Business.csproj">
       <Project>{3effb1aa-7a2e-4765-a18b-b130e6083feb}</Project>
       <Name>ReKreator.Business</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\ReKreator.Common\ReKreator.Common.csproj">
+      <Project>{E5DD7CDB-3A75-4FD4-8589-FABB779315BD}</Project>
+      <Name>ReKreator.Common</Name>
     </ProjectReference>
     <ProjectReference Include="..\ReKreator.Data\ReKreator.Data.csproj">
       <Project>{606af6e3-247c-455b-a281-5a3d4b2c5ba2}</Project>

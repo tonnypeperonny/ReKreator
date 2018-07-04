@@ -1,5 +1,4 @@
 ﻿using ReKreator.Data.Context;
-using ReKreator.Scheduler;
 using ReKreator.Scheduler.DataBaseHelper;
 
 namespace ReKreator.Web.Helpers

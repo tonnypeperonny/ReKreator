@@ -50,7 +50,7 @@ namespace ReKreator.Web.Tests.Operations
         {
             //act
             var model = new SignUpModel();
-            var result = underTest.SignUp(model);
+            var result = underTest.SignUp(model).Content;
 
             //assert
             result.Should().Be(IdentityResult.Success);
@@ -60,7 +60,7 @@ namespace ReKreator.Web.Tests.Operations
         public void When_signUp_invoke_where_userManager_create_return_some_error_should_retund_failed()
         {
             //act
-            var result = underTest.SignUp(new SignUpModel());
+            var result = underTest.SignUp(new SignUpModel()).Content;
 
             //assert
             result.Should().Be(IdentityResult.Success);
