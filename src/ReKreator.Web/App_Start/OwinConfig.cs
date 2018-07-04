@@ -19,7 +19,6 @@ namespace ReKreator.Web
             var cookie = container.Resolve<CookieAuthenticationOptions>();
             cookie.AuthenticationType = DefaultAuthenticationTypes.ApplicationCookie;
             cookie.LoginPath = new PathString("/Home/Index");
-            cookie.LogoutPath = new PathString("/Home/Index");
 
             app.UseCookieAuthentication(cookie);
             

@@ -104,5 +104,11 @@
     <None Include="App.config" />
     <None Include="packages.config" />
   </ItemGroup>
+  <ItemGroup>
+    <ProjectReference Include="..\ReKreator.Data\ReKreator.Data.csproj">
+      <Project>{606AF6E3-247C-455B-A281-5A3D4B2C5BA2}</Project>
+      <Name>ReKreator.Data</Name>
+    </ProjectReference>
+  </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
 </Project>

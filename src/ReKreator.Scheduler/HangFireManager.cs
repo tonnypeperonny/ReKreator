@@ -1,5 +1,7 @@
 ﻿using System;
+using System.Collections.Generic;
 using Hangfire;
+using ReKreator.Data.Models;
 
 namespace ReKreator.Scheduler
 {
@@ -10,14 +12,15 @@ namespace ReKreator.Scheduler
             RecurringJob.AddOrUpdate("DailyParsing",() => parserMethod(), Cron.Daily());
         }
 
-        public void NewContentNotificationSend(Action<string> emailNotification, string userEmail, int notificationDate)
+        public void FavoriteContentNotificationSend(Action<User, string, string> emailNotification, string daysLeftEvent, string eventName, User currentUser,
+            DateTime notificationDate)
         {
-            RecurringJob.AddOrUpdate("ContentNotification", () => emailNotification(userEmail), Cron.DayInterval(notificationDate));
+            BackgroundJob.Schedule(() => emailNotification(currentUser,eventName,daysLeftEvent), notificationDate);
         }
 
-        public void FavoriteContentNotificationSend(Action<string> emailNotification, string userEmail, DateTime notificationDate)
+        public void NewContentNotificationSend(Action<User, List<string>> emailNotification, User currentUser, List<string> eventsList, int notificationDate)
         {
-            BackgroundJob.Schedule(() => emailNotification(userEmail), notificationDate);
+            RecurringJob.AddOrUpdate("ContentNotification", () => emailNotification(currentUser,eventsList), Cron.DayInterval(notificationDate));
         }
     }
 }
