@@ -14,12 +14,10 @@ namespace ReKreator.Web
             var container = IocContainer.ConfigureContainer();
             app.UseAutofacMiddleware(container);
             app.UseAutofacMvc();
-
             var cookie = container.Resolve<CookieAuthenticationOptions>();
             cookie.AuthenticationType = DefaultAuthenticationTypes.ApplicationCookie;
             cookie.LoginPath = new PathString("/Home/Index");
             cookie.LogoutPath = new PathString("/Home/Index");
-
             app.UseCookieAuthentication(cookie);
         }
     }

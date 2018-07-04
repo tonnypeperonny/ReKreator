@@ -251,6 +251,8 @@
     <Content Include="Scripts\popper-utils.js.map" />
     <Content Include="Views\Account\SignUp.cshtml" />
     <Content Include="Views\Account\SignIn.cshtml" />
+    <Content Include="Views\Shared\NotificationEmailDailyTemplate.cshtml" />
+    <Content Include="Views\Shared\NotificationEmailFavoriteTemplate.cshtml" />
     <None Include="Web.Debug.config">
       <DependentUpon>Web.config</DependentUpon>
     </None>

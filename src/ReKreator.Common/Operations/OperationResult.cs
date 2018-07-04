@@ -1,6 +1,4 @@
-﻿using System.Collections.Generic;
-
-namespace ReKreator.Common.Operations
+﻿namespace ReKreator.Common.Operations
 {
     public class OperationResult
     {

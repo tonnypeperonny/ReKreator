@@ -1,0 +1,20 @@
+﻿<!DOCTYPE html>
+
+<html>
+<head>
+    <meta name="viewport" content="width=device-width" />
+    <title></title>
+</head>
+<body>
+    <div>
+        <text>Hey, <strong>{{ReceiverName}}</strong>, there are a lot of new content for u:</text>
+        <ul>
+            {% for eventName in Content %}
+
+                <li>{{eventName}}</li>
+            {% endfor %}
+        </ul>
+           <text>and lots more, check it out!<br><br><br>Your ReKreator team D: </text>
+    </div>
+</body>
+</html>

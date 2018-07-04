@@ -6,7 +6,6 @@ using Microsoft.AspNet.Identity;
 using Microsoft.AspNet.Identity.EntityFramework;
 using Microsoft.Owin.Security;
 using Microsoft.Owin.Security.Cookies;
-using ReKreator.Common.Operations;
 using ReKreator.Data.Context;
 using ReKreator.Data.Models;
 using ReKreator.Web.Authorization.SignIn;
