@@ -123,6 +123,30 @@
   <data name="EmailValidator" xml:space="preserve">
     <value>"Incorrect email, should be like Yourmail@some.mail!"</value>
   </data>
+  <data name="HttpError401Message" xml:space="preserve">
+    <value>The request has not been applied because it lacks valid authentication credentials for the target resource.</value>
+  </data>
+  <data name="HttpError401Title" xml:space="preserve">
+    <value>Unauthorized</value>
+  </data>
+  <data name="HttpError403Message" xml:space="preserve">
+    <value>The server understood the request but refuses to authorize it.</value>
+  </data>
+  <data name="HttpError403Title" xml:space="preserve">
+    <value>Forbidden</value>
+  </data>
+  <data name="HttpError404Message" xml:space="preserve">
+    <value>We can't find the page you're looking for.</value>
+  </data>
+  <data name="HttpError404Title" xml:space="preserve">
+    <value>Not Found</value>
+  </data>
+  <data name="HttpError500Message" xml:space="preserve">
+    <value>The server encountered an unexpected condition that prevented it from fulfilling the request.</value>
+  </data>
+  <data name="HttpError500Title" xml:space="preserve">
+    <value>Internal server error</value>
+  </data>
   <data name="SignInError" xml:space="preserve">
     <value>Wrong login or password!</value>
   </data>

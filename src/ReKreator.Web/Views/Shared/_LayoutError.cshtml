@@ -1,0 +1,24 @@
+﻿@using System.Web.Optimization
+<!DOCTYPE html>
+
+<html>
+<head>
+    <meta name="viewport" content="width=device-width" />
+    <title>Ooops!</title>
+    @Styles.Render("~/bundles/css")
+    @Scripts.Render("~/bundles/modern")
+</head>
+<body style="background-image: none">
+<div class="row justify-content-center text-center">
+    <div class="col-md-4" style="padding-top:5%">
+
+       
+        
+        <img src="~/Images/404_error-illo.png" alt=""/>
+    </div>
+</div>
+<div class="container">
+    @RenderBody()
+</div>
+</body>
+</html>
