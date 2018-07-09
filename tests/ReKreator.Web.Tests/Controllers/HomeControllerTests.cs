@@ -10,11 +10,11 @@ namespace ReKreator.Web.Tests.Controllers
         [Test]
         public void When_index_action_invoked_then_should_return_view()
         {
-            //act
+            // arrange
             var controller = new HomeController();
+            // act
             var result = controller.Index();
-
-            //assert
+            // assert
             result.Should().NotBeNull();
         }
     }
