@@ -79,6 +79,78 @@ namespace ReKreator.Web.Resources {
         }
         
         /// <summary>
+        ///   Looks up a localized string similar to The request has not been applied because it lacks valid authentication credentials for the target resource..
+        /// </summary>
+        public static string HttpError401Message {
+            get {
+                return ResourceManager.GetString("HttpError401Message", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to Unauthorized.
+        /// </summary>
+        public static string HttpError401Title {
+            get {
+                return ResourceManager.GetString("HttpError401Title", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to The server understood the request but refuses to authorize it..
+        /// </summary>
+        public static string HttpError403Message {
+            get {
+                return ResourceManager.GetString("HttpError403Message", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to Forbidden.
+        /// </summary>
+        public static string HttpError403Title {
+            get {
+                return ResourceManager.GetString("HttpError403Title", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to We can&apos;t find the page you&apos;re looking for..
+        /// </summary>
+        public static string HttpError404Message {
+            get {
+                return ResourceManager.GetString("HttpError404Message", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to Not Found.
+        /// </summary>
+        public static string HttpError404Title {
+            get {
+                return ResourceManager.GetString("HttpError404Title", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to The server encountered an unexpected condition that prevented it from fulfilling the request..
+        /// </summary>
+        public static string HttpError500Message {
+            get {
+                return ResourceManager.GetString("HttpError500Message", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to Internal server error.
+        /// </summary>
+        public static string HttpError500Title {
+            get {
+                return ResourceManager.GetString("HttpError500Title", resourceCulture);
+            }
+        }
+        
+        /// <summary>
         ///   Looks up a localized string similar to Wrong login or password!.
         /// </summary>
         public static string SignInError {
