@@ -146,8 +146,8 @@ namespace ReKreator.HtmlParser.ContentProvider.AfishaTutBy
             {
                 PlaceName = place.Text(),
                 PlaceUrl = place.GetAttribute("href"),
-                PlaceAddress = address?.Text()
             };
+            result.PlaceAddress = address?.Text();
 
             return result;
         }

@@ -70,6 +70,7 @@
     <Reference Include="System.Xml.Linq" />
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="ContentProviders\SpectacleProviderTests.cs" />
     <Compile Include="ContentProviders\ConcertProviderTests.cs" />
     <Compile Include="Core\ContentProviderFactoryTests.cs" />
     <Compile Include="Core\EventsProviderTests.cs" />
